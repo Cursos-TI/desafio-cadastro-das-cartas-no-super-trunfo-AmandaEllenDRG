@@ -16,7 +16,7 @@
 
     int main() {
         // Estava com dificuldades com scan("%s") para exibição de cidade com espaço.
-        // Fiz algumas pesquisas pelo youtube e encontrei uma forma para apresentar melhor.
+        // Fiz algumas pesquisas pelo youtube e encontrei uma forma para apresentar melhor
         // Declaração das variáveis para a Carta 01
         char estado;
         char codigo[3];
