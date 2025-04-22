@@ -9,6 +9,8 @@ int main() {
     float Area1;
     float Pib1;
     int PontosT1;
+    float Densidade1;
+    float PerCapita1;
 
     // Carta 2
     char Estado2;
@@ -18,6 +20,8 @@ int main() {
     float Area2;
     float Pib2;
     int PontosT2;
+    float Densidade2;
+    float PerCapita2;
 
     // Entrada dos dados da Carta 1
     printf("Carta 1\n");
@@ -61,6 +65,9 @@ outros dados, pesquisei e usei o getchar(); só pra limpar esse pulo do final.*/
     printf("Pontos Turísticos: ");
     scanf("%d", &PontosT1);
 
+    //Divisão Densidade Populacional e PIB
+    Densidade1 = Populacao1 / Area1;
+    PerCapita1 = Pib1 / Populacao1;
 
     
     // Entrada dos dados da Carta 2
@@ -88,7 +95,11 @@ outros dados, pesquisei e usei o getchar(); só pra limpar esse pulo do final.*/
     printf("Pontos Turísticos: ");
     scanf("%d", &PontosT2);
 
-    // Impressão dos dados
+    // Divisão Densidade Populacional e PIB
+    Densidade2 = Populacao2 / Area2;
+    PerCapita2 = Pib2 / Populacao2;
+
+    // Impressão dados carta 1 
     printf("Dados da Carta 1\n");
     printf("Estado: %c\n", Estado1);
     printf("Código: %s\n", Codigo1);
@@ -97,7 +108,10 @@ outros dados, pesquisei e usei o getchar(); só pra limpar esse pulo do final.*/
     printf("Área: %.2f km²\n", Area1);
     printf("PIB: R$ %.2f bilhões\n", Pib1);
     printf("Pontos Turísticos: %d\n", PontosT1);
+    printf("Densidade Populacional: %.2f hab/km²\n", Densidade1);
+    printf("PIB Per Capita: %.2f reais\n", PerCapita1);
 
+    //Impressão dados carta 2 
     printf("Dados da Carta 2\n");
     printf("Estado: %c\n", Estado2);
     printf("Código: %s\n", Codigo2);
@@ -106,8 +120,8 @@ outros dados, pesquisei e usei o getchar(); só pra limpar esse pulo do final.*/
     printf("Área: %.2f km²\n", Area2);
     printf("PIB: R$ %.2f bilhões\n", Pib2);
     printf("Pontos Turísticos: %d\n", PontosT2);
+    printf("Densidade Populacional: %.2f hab/km²\n", Densidade2);
+    printf("PIB Per Capita: %.2f reais\n", PerCapita2);
 
     return 0;
 }
-
-
