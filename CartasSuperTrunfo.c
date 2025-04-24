@@ -5,23 +5,27 @@ int main() {
     char Estado1;
     char Codigo1[4];
     char Cidade1[50];
-    int Populacao1;
+    unsigned long int Populacao1;
     float Area1;
     float Pib1;
     int PontosT1;
     float Densidade1;
     float PerCapita1;
+    float SuperPoder1;
+
 
     // Carta 2
     char Estado2;
     char Codigo2[4];
     char Cidade2[50];
-    int Populacao2;
+    unsigned long int Populacao2;
     float Area2;
     float Pib2;
     int PontosT2;
     float Densidade2;
     float PerCapita2;
+    float SuperPoder2;
+    int Carta1, Carta2;
 
     // Entrada dos dados da Carta 1
     printf("Carta 1\n");
@@ -51,7 +55,7 @@ outros dados, pesquisei e usei o getchar(); só pra limpar esse pulo do final.*/
 
     // Escreva o número de habitantes da Cidade
     printf("População: \n");
-    scanf("%d", &Populacao1);
+    scanf("%u", &Populacao1);
 
     // Escreva a Área em quilômetros quadrados
     printf("Área: \n");
@@ -69,6 +73,7 @@ outros dados, pesquisei e usei o getchar(); só pra limpar esse pulo do final.*/
     Densidade1 = Populacao1 / Area1;
     PerCapita1 = Pib1 / Populacao1;
 
+    SuperPoder1 = (float)Populacao1 + Area1 + Pib1 + (float)PontosT1 + PerCapita1;
     
     // Entrada dos dados da Carta 2
     printf("Carta 2\n");
@@ -84,7 +89,7 @@ outros dados, pesquisei e usei o getchar(); só pra limpar esse pulo do final.*/
     getchar();
 
     printf("População: \n");
-    scanf("%d", &Populacao2);
+    scanf("%u", &Populacao2);
 
     printf("Área: \n");
     scanf("%f", &Area2);
@@ -98,6 +103,19 @@ outros dados, pesquisei e usei o getchar(); só pra limpar esse pulo do final.*/
     // Divisão Densidade Populacional e PIB
     Densidade2 = Populacao2 / Area2;
     PerCapita2 = Pib2 / Populacao2;
+
+    SuperPoder2 = (float)Populacao2 + Area2 + Pib2 + (float)PontosT2 + PerCapita2;
+
+    //Comparações Carta 1 e 2
+    int vPopulacao = Populacao1 > Populacao2;
+    int vArea = Area1 > Area2;
+    int vPib = Pib1 > Pib2;
+    int vPontosT = PontosT1 > PontosT2;
+    int vDensidade = Densidade1 < Densidade2;
+    int vPerCapita = PerCapita1 > PerCapita2;
+    int vSuperPoder = SuperPoder1 > SuperPoder2;
+    int Resultado = Carta1 > Carta2;
+
 
     // Impressão dados carta 1 
     printf("Dados da Carta 1\n");
@@ -123,5 +141,18 @@ outros dados, pesquisei e usei o getchar(); só pra limpar esse pulo do final.*/
     printf("Densidade Populacional: %.2f hab/km²\n", Densidade2);
     printf("PIB Per Capita: %.2f reais\n", PerCapita2);
 
+    printf("***Comparação Carta 1 e 2***\n");
+    printf("População: %d\n", vPopulacao);
+    printf("Área: %d\n", vArea);
+    printf("PIB: %d\n", vPib);
+    printf("Pontos Turísticos: %d\n", vPontosT);
+    printf("Densidade Populacional: %d\n", vDensidade);
+    printf("PIB per Capita: %d\n",vPib);
+    printf("Super Poder: %d\n", vSuperPoder);
+    printf("Resultado: A Carta 1 é maior que a Carta 2? %d\n", Resultado);
+
+    /*O resultado número 0 indica que a Carta 2 é a vencedora, já o número 1 indica que a Carta 1 
+    é a vencedora */
+    // 1 para verdadeiro e 0 para falso
     return 0;
 }
